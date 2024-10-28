@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#F5F5DC"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gra w kości.Autor 000000000"
+        android:background="#A53A2A"
+        android:textColor="#ffffff"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:padding="10dp"
+         />
+
+    <Button
+        android:id="@+id/roll_dice_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="RZUĆ KOŚĆMI"
+        android:layout_gravity="center"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="#D2691E"
+
+        />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+        android:background="@color/white"
+        >
+        <ImageView
+            android:id="@+id/first_dice_imageview"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:layout_margin="5dp"
+            android:src="@drawable/question"
+            />
+        <ImageView
+            android:id="@+id/second_dice_imageview"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:layout_margin="5dp"
+            android:src="@drawable/question"
+            />
+        <ImageView
+            android:id="@+id/third_dice_imageview"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:layout_margin="5dp"
+            android:src="@drawable/question"
+            />
+        <ImageView
+            android:id="@+id/fourth_dice_imageview"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:layout_margin="5dp"
+            android:src="@drawable/question"
+            />
+        <ImageView
+            android:id="@+id/fifth_dice_imageview"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:layout_margin="5dp"
+            android:src="@drawable/question"
+            />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Wynik tego losowania: "
+        android:layout_gravity="center"
+        android:layout_marginBottom="50dp"
+         />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Wynik gry:"
+        android:layout_gravity="center"
+        android:layout_marginBottom="50dp"
+         />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="RESETUJ WYNIK"
+        android:layout_gravity="center"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="#D2691E"
+         />
+
+</LinearLayout>
