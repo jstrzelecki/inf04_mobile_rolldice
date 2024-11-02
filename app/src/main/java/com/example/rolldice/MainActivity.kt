@@ -12,6 +12,8 @@ import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
 
+    var gameResult: Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -34,13 +36,14 @@ class MainActivity : AppCompatActivity() {
             2 to R.drawable.two,
             3 to R.drawable.three,
             4 to R.drawable.four,
-            5 to R.drawable.five
+            5 to R.drawable.five,
+            6 to R.drawable.six
 
         )
 
 
         rollDice.setOnClickListener {
-            val randomNumberList: List<Int> = List(5){(1..6).random()}
+            val randomNumberList: MutableList<Int> = MutableList(5){(1..6).random()}
             val (first, second, third, fourth, fifth) = randomNumberList
             firstDice.setImageResource(diceImages[first] ?: R.drawable.question)
             secondDice.setImageResource(diceImages[second] ?: R.drawable.question)
@@ -48,6 +51,20 @@ class MainActivity : AppCompatActivity() {
             fourthDice.setImageResource(diceImages[fourth] ?: R.drawable.question)
             fifthDice.setImageResource(diceImages[fifth] ?: R.drawable.question)
 
+            Log.i("rl", "$randomNumberList")
+            val numberOccurrences = mutableMapOf<Int, Int>()
+            for (num in randomNumberList) {
+                numberOccurrences[num] = numberOccurrences.getOrDefault(num, 0) + 1
+            }
+
+            Log.i("rl", "$numberOccurrences")
+            var result = numberOccurrences
+                .filter{it.value > 1}
+                .map{it.key * it.value}
+                .sum()
+            Log.i("rl", "$result")
+            gameResult += result
+            Log.i("rl", "$gameResult")
         }
 
     }
