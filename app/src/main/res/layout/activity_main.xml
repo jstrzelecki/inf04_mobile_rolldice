@@ -92,27 +92,27 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/roll_result_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Wynik tego losowania: "
+        android:text="Wynik tego losowania: 0"
         android:layout_gravity="center"
         android:layout_marginBottom="50dp"
          />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/game_result_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Wynik gry:"
+        android:text="Wynik gry: 0"
         android:layout_gravity="center"
         android:layout_marginBottom="50dp"
          />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/reset_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"

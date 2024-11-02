@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -30,6 +31,10 @@ class MainActivity : AppCompatActivity() {
         val thirdDice: ImageView = findViewById(R.id.third_dice_imageview)
         val fourthDice: ImageView = findViewById(R.id.fourth_dice_imageview)
         val fifthDice: ImageView = findViewById(R.id.fifth_dice_imageview)
+
+        val rollResulteTextView: TextView = findViewById(R.id.roll_result_textview)
+        val gameResultTextView: TextView = findViewById(R.id.game_result_textview)
+        val resetButton: Button = findViewById(R.id.reset_button)
 
         val diceImages = mapOf(
             1 to R.drawable.one,
@@ -58,13 +63,25 @@ class MainActivity : AppCompatActivity() {
             }
 
             Log.i("rl", "$numberOccurrences")
-            var result = numberOccurrences
+            var roll_result = numberOccurrences
                 .filter{it.value > 1}
                 .map{it.key * it.value}
                 .sum()
-            Log.i("rl", "$result")
-            gameResult += result
-            Log.i("rl", "$gameResult")
+            rollResulteTextView.text ="Wynik tego losowania: ${roll_result}"
+            gameResult += roll_result
+            gameResultTextView.text ="Wynik gry: ${gameResult}"
+        }
+
+        resetButton.setOnClickListener {
+            gameResult = 0
+            rollResulteTextView.text = "Wynik tego losowania: 0"
+            gameResultTextView.text = "Wynik gry: 0"
+
+            firstDice.setImageResource(R.drawable.question)
+            secondDice.setImageResource(R.drawable.question)
+            thirdDice.setImageResource(R.drawable.question)
+            fourthDice.setImageResource(R.drawable.question)
+            fifthDice.setImageResource(R.drawable.question)
         }
 
     }
